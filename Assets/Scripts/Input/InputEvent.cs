@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace KioskTest.UI
+namespace KioskTest.Input
 {
     [Serializable]
-    public class ExperimentInputActionEvent : UnityEvent<GameObject, ExperimentInputActionEvent.EventArgs>
+    public class InputEvent : UnityEvent<GameObject, InputEvent.EventArgs>
     {
         public struct EventArgs
         {
-            public int[] Answers;
-            public int AnswerCount { get { return Answers.Length; } }
+            public float value;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace KioskTest.UI
     [RequireComponent(typeof(InputField))]
     public class InputFieldAutoFocus : MonoBehaviour
     {
-        public bool Selected = false;
+        public bool InitallySelected = false;
         public NumberInput InputPanel;
         private InputField currentField;
         public InputField NextField;
@@ -19,7 +19,7 @@ namespace KioskTest.UI
             {
                 currentField = GetComponent<InputField>();
             }
-            if (Selected)
+            if (InitallySelected)
             {
                 currentField.Select();
             }

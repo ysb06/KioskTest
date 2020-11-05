@@ -11,6 +11,7 @@ namespace KioskTest
         None, Answer, Number, MultipleSelection
     }
 
+    [Serializable]
     public class ExperimentState
     {
         /// <summary>
@@ -32,6 +33,27 @@ namespace KioskTest
         /// 응답 수, 숫자 타입의 실험에서는 2이상의 수에서 Input Field가 2개 표시, 다중 선택 실험에서는 
         /// </summary>
         public int AnswerCount { get; private set; } = 1;
-        public int AnswerLength { get; private set; }
+
+        /// <summary>
+        /// 응답 길이, 숫자 타입의 실험에서만 적용되며 Input Field 내 텍스트 최대 길이
+        /// </summary>
+        public int AnswerMaxLength { get; private set; }
+
+        /// <summary>
+        /// ExperimentState의 기본 Constructor
+        /// </summary>
+        /// <param name="testName">테스트 이름</param>
+        /// <param name="titleText">제목 표시부에 표시할 내용</param>
+        /// <param name="type">선택지 종류</param>
+        /// <param name="answerCount">실험자가 선택할 정답 갯수</param>
+        /// <param name="answerMaxLength">숫자 타입 입력에서 입력 텍스트 최대 길이</param>
+        public ExperimentState(string testName, string titleText, ExperimentContentType type, int answerCount, int answerMaxLength)
+        {
+            TestName = testName;
+            MainGuideText = titleText;
+            ContentType = type;
+            AnswerCount = answerCount;
+            AnswerMaxLength = answerMaxLength;
+        }
     }
 }
