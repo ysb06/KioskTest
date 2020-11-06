@@ -77,6 +77,8 @@ namespace KioskTest
 
                 MainGuideTextUI.text = currentStateData.MainGuideText;  //제목 설정
                 ConfirmButton.interactable = false;
+                ConfirmButton.GetComponentInChildren<Text>().text = "확인";
+
 
                 int answerRange;
                 string answerGuideText;
@@ -87,6 +89,10 @@ namespace KioskTest
                         NumberAnswerIndicator.gameObject.SetActive(false);
                         NumberInputPanel.gameObject.SetActive(false);
                         MultipleChoiceInput.gameObject.SetActive(false);
+
+                        ConfirmButton.interactable = true;
+                        ConfirmButton.GetComponentInChildren<Text>().text = "실험 재시작";
+                        currentState = -1;
                         break;
                     case ExperimentContentType.Number:
                         AnswerGuideText.gameObject.SetActive(false);
@@ -95,7 +101,7 @@ namespace KioskTest
                         MultipleChoiceInput.gameObject.SetActive(false);
 
                         NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
-                        EventLogger.LogTestStart(currentState);
+                        EventLogger.LogTestStart(currentState, currentStateData.ContentType);
                         break;
                     case ExperimentContentType.MultipleSelection:
                         AnswerGuideText.gameObject.SetActive(false);
@@ -104,7 +110,7 @@ namespace KioskTest
                         MultipleChoiceInput.gameObject.SetActive(true);
 
                         MultipleChoiceInput.Initialize(currentStateData.AnswerSet, currentStateData.AnswerCount);
-                        EventLogger.LogTestStart(currentState);
+                        EventLogger.LogTestStart(currentState, currentStateData.ContentType);
                         break;
 
                     //랜덤 정답을 생성해야 하는 경우
@@ -138,7 +144,20 @@ namespace KioskTest
                         answerGuideText = "";
                         for (int i = 0; i < correctAnswers.Length; i++)
                         {
-                            correctAnswers[i] = Random.Range(1, answerRange - 1);
+                            bool isNotOk = true;
+                            while(isNotOk)
+                            {
+                                correctAnswers[i] = Random.Range(1, answerRange - 1);
+                                isNotOk = false;
+                                for (int j = 0; j < i; j++)
+                                {
+                                    if(correctAnswers[i] == correctAnswers[j])
+                                    {
+                                        print("Same Answers!");
+                                        isNotOk = true;
+                                    }
+                                }
+                            }
                             answerGuideText += currentStateData.AnswerSet[correctAnswers[i]] + ", ";
                         }
 
@@ -149,7 +168,7 @@ namespace KioskTest
         }
 
         private void DoTestAfterShowAnswer()
-        {   //확인 버튼이 여기에 도달할 때까지 안 눌려져야 함
+        {   
             ExperimentState currentStateData = States[currentState];
 
             switch(currentStateData.ContentType)
@@ -159,13 +178,13 @@ namespace KioskTest
                     NumberInputPanel.gameObject.SetActive(true);
 
                     NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
-                    EventLogger.LogTestStart(currentState);
+                    EventLogger.LogTestStart(currentState, currentStateData.ContentType);
                     break;
                 case ExperimentContentType.MultipleSelectionWithRandom:
                     MultipleChoiceInput.gameObject.SetActive(true);
 
                     MultipleChoiceInput.Initialize(currentStateData.AnswerSet, currentStateData.AnswerCount);
-                    EventLogger.LogTestStart(currentState);
+                    EventLogger.LogTestStart(currentState, currentStateData.ContentType);
                     break;
             }
         }
@@ -182,17 +201,28 @@ namespace KioskTest
             {
                 case ExperimentContentType.Number:
                 case ExperimentContentType.MultipleSelection:
-                    ConfirmButton.interactable = true;
+                    if (args.Answers.Length >= currentStateData.AnswerCount)
+                    {
+                        ConfirmButton.interactable = true;
+                    }
+                    else
+                    {
+                        ConfirmButton.interactable = false;
+                    }
                     break;
                 case ExperimentContentType.NumberWithRandom:
                 case ExperimentContentType.MultipleSelectionWithRandom:
+                    if (args.Answers.Length < currentStateData.AnswerCount)
+                    {
+                        ConfirmButton.interactable = false;
+                        break;
+                    }
                     bool isAllCorrect = true;
                     foreach(int answer in args.Answers)
                     {
                         bool isCorrect = false;
                         foreach(int correctAnswer in correctAnswers)
                         {
-                            print(correctAnswer + " == " + answer);
                             if(correctAnswer == answer)
                             {
                                 isCorrect = true;
@@ -212,7 +242,7 @@ namespace KioskTest
         public void OnAnswerConfirmed()
         {
             EventLogger.LogTestEnd(currentState);
-            EventLogger.ShowResult();
+            EventLogger.ShowCurrent();
             DoTest();
         }
     }

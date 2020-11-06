@@ -10,6 +10,8 @@ namespace KioskTest.UI
     {
         public const int TRANSITION_FRAME_INTERVAL = 30;
 
+        public ExperimentEventLogger EventLogger;
+
         [Header("페이지 이동 관련")]
         public int CurrentPage = 0;
         public List<RectTransform> Pages = new List<RectTransform>();
@@ -86,10 +88,12 @@ namespace KioskTest.UI
             if(NeedToTrasitRight)
             {
                 SetPage(CurrentPage + 1);
+                EventLogger.LogTest(UnitTestEvent.Swipe, 1);
             }
             else
             {
                 SetPage(CurrentPage - 1);
+                EventLogger.LogTest(UnitTestEvent.Swipe, -1);
             }
         }
 
@@ -110,9 +114,12 @@ namespace KioskTest.UI
                     colorMultiplier = 1,
                     fadeDuration = 0.1f
                 };
+                EventLogger.LogTest(UnitTestEvent.Cancel, id);
             }
             else
-            {   //없는 답안은 추가
+            {
+                EventLogger.LogTest(UnitTestEvent.Click, id);
+                //없는 답안은 추가
                 if (Answers.Count < MaxAnswer)
                 {
                     Answers.Add(listId);
@@ -126,6 +133,11 @@ namespace KioskTest.UI
                         colorMultiplier = 1,
                         fadeDuration = 0.1f
                     };
+
+                    if(Answers.Count >= MaxAnswer)
+                    {
+                        EventLogger.LogTest(UnitTestEvent.Answer, id);
+                    }
                 }
             }
 
@@ -133,6 +145,8 @@ namespace KioskTest.UI
             {
                 Answers = Answers.ToArray()
             });
+
+
         }
 
         public void SetPage(int page)

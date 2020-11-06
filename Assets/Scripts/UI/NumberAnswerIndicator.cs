@@ -13,7 +13,6 @@ public class NumberAnswerIndicator : MonoBehaviour
     public NumberInput NumberInputPanel;
     [Header("사용자 최종 답안 구성 이벤트")]
     public ExperimentActionEvent SelectEvent;
-    private int[] answers = new int[2];
 
     public void Initialize(string headerText, int fieldCount, int maxLength)
     {
@@ -22,8 +21,6 @@ public class NumberAnswerIndicator : MonoBehaviour
         InputField2.characterLimit = maxLength;
         InputField1.text = string.Empty;
         InputField2.text = string.Empty;
-
-        answers = new int[2];
 
         if (fieldCount == 1)
         {
@@ -41,20 +38,23 @@ public class NumberAnswerIndicator : MonoBehaviour
 
     public void InvokeAnswerSelectedEvent(InputField sender, string value)
     {
-        print(value);
-        if(sender == InputField1)
+        List<int> answers = new List<int>();
+        if(InputField1.text != string.Empty)
         {
-            answers[0] = int.Parse(value);
+            answers.Add(int.Parse(InputField1.text));
         }
-        else
+        if(InputField2.text != string.Empty)
         {
-            answers[1] = int.Parse(value);
+            answers.Add(int.Parse(InputField2.text));
         }
 
-        SelectEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
+        if (value.Length >= sender.characterLimit)
         {
-            Answers = answers
-        });
+            SelectEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
+            {
+                Answers = answers.ToArray()
+            });
+        }
     }
 }
 
