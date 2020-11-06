@@ -34,6 +34,41 @@ namespace KioskTest.UI
             }
         }
 
+        public void Initialize(string[] answerSet, int answerCount)
+        {
+            MaxAnswer = answerCount;
+            for(int i = 0; i < AnswerButtons.Length; i++)
+            {
+                if(i < answerSet.Length)
+                {
+                    AnswerButtons[i].gameObject.SetActive(true);
+
+                    //최적화 문제 있음
+                    AnswerButtons[i].GetComponentInChildren<Text>().text = answerSet[i];
+                }
+                else
+                {
+                    AnswerButtons[i].gameObject.SetActive(false);
+                }
+            }
+
+            //선택 및 모양 초기화
+            Answers.Clear();
+            foreach(Button target in AnswerButtons)
+            {
+                target.colors = new ColorBlock()
+                {
+                    normalColor = Color.white,
+                    highlightedColor = Color.white,
+                    pressedColor = Color.white,
+                    selectedColor = Color.white,
+                    disabledColor = Color.red,
+                    colorMultiplier = 1,
+                    fadeDuration = 0.1f
+                };
+            }
+        }
+
         public void OnSwipe(GameObject sender, InputEvent.EventArgs args)
         {
             if(args.value >= 0)
@@ -61,6 +96,7 @@ namespace KioskTest.UI
         public void OnChoiceSelected(int id)
         {
             int listId = id - 1;
+
             if(Answers.Contains(listId))
             {   //있는 답안은 제거
                 Answers.Remove(listId);
@@ -77,7 +113,7 @@ namespace KioskTest.UI
             }
             else
             {   //없는 답안은 추가
-                if (Answers.Count <= MaxAnswer)
+                if (Answers.Count < MaxAnswer)
                 {
                     Answers.Add(listId);
                     AnswerButtons[listId].colors = new ColorBlock()

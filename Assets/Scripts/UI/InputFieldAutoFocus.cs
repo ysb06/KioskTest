@@ -8,6 +8,7 @@ namespace KioskTest.UI
     [RequireComponent(typeof(InputField))]
     public class InputFieldAutoFocus : MonoBehaviour
     {
+        public NumberAnswerIndicator AnswerIndicator;
         public bool InitallySelected = false;
         public NumberInput InputPanel;
         private InputField currentField;
@@ -28,11 +29,19 @@ namespace KioskTest.UI
         {
             if (currentField.characterLimit > 0 && value.Length >= currentField.characterLimit)
             {
-                NextField.Select();
-                if (InputPanel != null)
+                if (NextField != null)
                 {
-                    InputPanel.Target = NextField;
+                    NextField.Select();
+                    if (InputPanel != null)
+                    {
+                        InputPanel.Target = NextField;
+                    }
                 }
+            }
+
+            if (value != string.Empty)
+            {
+                AnswerIndicator.InvokeAnswerSelectedEvent(currentField, value);
             }
         }
     }
