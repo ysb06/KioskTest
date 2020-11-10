@@ -758,6 +758,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Camera",
+            "id": "81768fb3-a456-4e7f-9d6d-a1af9aae2cb0",
+            "actions": [
+                {
+                    "name": "SwitchDisplayOne",
+                    "type": "Button",
+                    "id": "ea5aade2-215e-4110-93f8-1e3e729b4ab7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchDisplayTwo",
+                    "type": "Button",
+                    "id": "099229b1-d8c1-467f-8a3a-584fd8512b2b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "912c2490-440f-45be-bbef-07db6a437d87",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchDisplayOne",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0be6e4a7-901a-4398-90df-8e9a942c77f3",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchDisplayTwo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
