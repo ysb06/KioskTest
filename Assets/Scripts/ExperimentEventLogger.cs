@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public enum Gender { None, Male, Female }
@@ -40,6 +41,16 @@ public class ExperimentEventLogger : MonoBehaviour
 {
     public List<TestUnit> TestList = new List<TestUnit>();
     public TestUnit CurrentTest = new TestUnit();
+    public int CurrentId = -1;
+    public Gender CurrentGender = Gender.None;
+    public int? CurrentBirth = -1;
+
+    public void SetID(int id)
+    {
+        CurrentId = id;
+        CurrentGender = Gender.None;
+        CurrentBirth = null;
+    }
 
     public void LogTestStart(int currentStep, ExperimentContentType testType)
     {
@@ -47,13 +58,19 @@ public class ExperimentEventLogger : MonoBehaviour
         {
             TestStep = currentStep,
             TestType = testType,
-            EventList = new List<TestEvent>()
+            EventList = new List<TestEvent>(),
+            Gender = CurrentGender
         };
         CurrentTest.EventList.Add(new TestEvent()
         {
             Event = UnitTestEvent.Start,
             Time = Time.realtimeSinceStartup
         });
+
+        if(CurrentBirth != null)
+        {
+            CurrentTest.BirthDate = CurrentBirth.Value;
+        }
     }
 
     public void LogTest(UnitTestEvent eventType, int value)
@@ -69,11 +86,13 @@ public class ExperimentEventLogger : MonoBehaviour
     public void LogGender(Gender gender)
     {
         CurrentTest.Gender = gender;
+        CurrentGender = gender;
     }
 
     public void LogBirth(int birth)
     {
         CurrentTest.BirthDate = birth;
+        CurrentBirth = birth;
     }
 
     public void LogTestEnd(int currentState)
@@ -107,6 +126,28 @@ public class ExperimentEventLogger : MonoBehaviour
         str += "\nTotal: " + (end - start);
         print(str);
     }
+
+    public void ExportToCSV()
+    {
+        string testName = DateTime.Now.ToString("yyyyMMdd_hhmmss");
+        string data = "ID,성별,생일,단위테스트_단계,단위테스트_종류,Event,GameTime,값\n";
+
+        foreach (TestUnit unit in TestList)
+        { 
+            string common = unit.TesterId + "," + unit.Gender + "," + unit.BirthDate + "," + unit.TestStep + "," + unit.TestType + ",";
+            foreach(TestEvent ev in unit.EventList)
+            {
+                data += common + ev.Event + "," + ev.Time + "," + ev.Value + "\n";
+            }
+        }
+
+        FileStream fs = new FileStream(Application.persistentDataPath + "/" + testName + ".csv", FileMode.OpenOrCreate, FileAccess.Write);
+        StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
+        sw.Write(data);
+        sw.Close();
+
+        Application.OpenURL(Application.persistentDataPath);
+    }
 }
 
 [Serializable]
@@ -116,12 +157,12 @@ public struct TestUnit
     public int TesterId;
     public Gender Gender;
     public int BirthDate;
+    //아마 실제 시간도 필요할 듯
 
     //실험정보
     public int TestStep;
     public ExperimentContentType TestType;
     public List<TestEvent> EventList;
-
 }
 
 [Serializable]

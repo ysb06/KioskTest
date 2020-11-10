@@ -1,6 +1,7 @@
 ﻿using KioskTest.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -126,8 +127,21 @@ namespace KioskTest
                         answerGuideText = "";
                         for (int i = 0; i < correctAnswers.Length; i++)
                         {
-                            correctAnswers[i] = Random.Range(1, answerRange - 1);
-                            answerGuideText += correctAnswers[i] + ", ";
+                            bool isNotOk = true;
+                            while(isNotOk)
+                            {
+                                correctAnswers[i] = Random.Range(1, answerRange - 1);
+                                isNotOk = false;
+                                for (int j = 0; j < i; j++)
+                                {
+                                    if(correctAnswers[i] == correctAnswers[j])
+                                    {
+                                        print("Same Answers!");
+                                        isNotOk = true;
+                                    }
+                                }
+                            }
+                            answerGuideText += currentStateData.AnswerSet[correctAnswers[i]] + ", ";
                         }
 
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
@@ -149,12 +163,12 @@ namespace KioskTest
                             {
                                 correctAnswers[i] = Random.Range(1, answerRange - 1);
                                 isNotOk = false;
-                                for (int j = 0; j < i; j++)
+                                foreach(int pastAnswer in correctAnswers)
                                 {
-                                    if(correctAnswers[i] == correctAnswers[j])
+                                    if(correctAnswers[i] == pastAnswer)
                                     {
-                                        print("Same Answers!");
-                                        isNotOk = true;
+                                        isNotOk = false;
+                                        i--;
                                     }
                                 }
                             }
@@ -204,6 +218,20 @@ namespace KioskTest
                     if (args.Answers.Length >= currentStateData.AnswerCount)
                     {
                         ConfirmButton.interactable = true;
+
+                        //주의: State List가 바뀌면 실제 성별이나 생일을 묻는 질문인지 검토 필요
+                        switch(currentState)
+                        {
+                            case 0:
+                                EventLogger.SetID(args.Answers[0]);
+                                break;
+                            case 1:
+                                EventLogger.LogGender((Gender)args.Answers[0] + 1);
+                                break;
+                            case 4:
+                                EventLogger.LogBirth(args.Answers[0]);
+                                break;
+                        }
                     }
                     else
                     {
