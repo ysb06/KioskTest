@@ -32,6 +32,7 @@ namespace KioskTest
 
         //실험 private 변수
         private int[] correctAnswers;
+        private bool isShowingGuideText = false;
 
         private void Start()
         {
@@ -41,8 +42,10 @@ namespace KioskTest
         private void DoTest()
         {
             currentState++;
+            isShowingGuideText = false;
+            AnswerGuideText.isOkToProceed = false;
 
-            if(currentState >= 0 && currentState < data.States.Length)
+            if (currentState >= 0 && currentState < data.States.Length)
             {
                 ExperimentState currentStateData = data.States[currentState];
 
@@ -114,6 +117,8 @@ namespace KioskTest
                             answerGuideText += correctAnswers[i] + ", ";
                         }
 
+                        isShowingGuideText = true;  //위험한 코드
+                        ConfirmButton.interactable = true;  //이것도
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
                         break;
                     case ExperimentContentType.MultipleSelectionWithRandom:
@@ -145,6 +150,8 @@ namespace KioskTest
                             answerGuideText += currentStateData.AnswerSet[correctAnswers[i]] + ", ";
                         }
 
+                        isShowingGuideText = true;  //위험한 코드
+                        ConfirmButton.interactable = true;  //이것도
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
                         break;
                 }
@@ -239,8 +246,28 @@ namespace KioskTest
         /// </summary>
         public void OnAnswerConfirmed()
         {
-            EventLogger.LogTestEnd(currentState);
-            EventLogger.ShowCurrent();
+            if(isShowingGuideText)
+            {
+                AnswerGuideText.isOkToProceed = true;   //이거 위험한 코드
+                //실험 진행...코드가 꼬일 수 있음
+                //이래서 실험 계획서를 제대로 써서 줬으면 좋겠는데....
+                //기획서, 계획서 안 주면 이렇게 땜빵되는 코드가 점점 늘어남.
+                //영향 받는 쪽: 확인 버튼, AnswerGuideText, 여기 DoTest함수
+                //여기 isShowingGuideText 변수
+
+                isShowingGuideText = false;
+            }
+            else
+            {
+                EventLogger.LogTestEnd(currentState);
+                EventLogger.ShowCurrent();
+                DoTest();
+            }
+        }
+
+        public void ForceTest(int state)
+        {
+            currentState = state - 1;
             DoTest();
         }
     }

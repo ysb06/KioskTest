@@ -9,7 +9,7 @@ namespace KioskTest.UI
     public class AnswerGuideText : MonoBehaviour
     {
         public float WaitTime = 3;
-        public float ShowTime = 3;
+        public bool isOkToProceed = false;
         public Text Content;
 
         public void Initialize(string answer, Action callback)
@@ -30,7 +30,8 @@ namespace KioskTest.UI
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
-            yield return new WaitForSeconds(ShowTime);
+            yield return new WaitUntil(() => isOkToProceed);
+            isOkToProceed = false;
             gameObject.SetActive(false);
             callback.Invoke();
         }
