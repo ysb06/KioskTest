@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using KioskTest.Experiment;
+using KioskTest.UI.Experiment;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

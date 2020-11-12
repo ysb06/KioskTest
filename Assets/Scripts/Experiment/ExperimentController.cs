@@ -1,11 +1,12 @@
 ﻿using KioskTest.UI;
+using KioskTest.UI.Experiment;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KioskTest
+namespace KioskTest.Experiment
 {
     public class ExperimentController : MonoBehaviour
     {
@@ -13,6 +14,9 @@ namespace KioskTest
 
         public ExperimentEventLogger EventLogger;
         public int currentState = -1;
+
+        public AudioSource DingSound;
+        public AudioSource BeepSound;
 
         [Space(20)]
         public Text MainGuideTextUI;
@@ -69,6 +73,8 @@ namespace KioskTest
                         currentState = -1;
                         break;
                     case ExperimentContentType.Number:
+                        DingSound.Play();
+
                         AnswerGuideText.gameObject.SetActive(false);
                         NumberAnswerIndicator.gameObject.SetActive(true);
                         NumberInputPanel.gameObject.SetActive(true);
@@ -78,6 +84,8 @@ namespace KioskTest
                         EventLogger.LogTestStart(currentState, currentStateData.ContentType);
                         break;
                     case ExperimentContentType.MultipleSelection:
+                        DingSound.Play();
+
                         AnswerGuideText.gameObject.SetActive(false);
                         NumberAnswerIndicator.gameObject.SetActive(false);
                         NumberInputPanel.gameObject.SetActive(false);
@@ -89,6 +97,8 @@ namespace KioskTest
 
                     //랜덤 정답을 생성해야 하는 경우
                     case ExperimentContentType.NumberWithRandom:
+                        DingSound.Play();
+
                         AnswerGuideText.gameObject.SetActive(true);
                         NumberAnswerIndicator.gameObject.SetActive(false);
                         NumberInputPanel.gameObject.SetActive(false);
@@ -122,6 +132,8 @@ namespace KioskTest
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
                         break;
                     case ExperimentContentType.MultipleSelectionWithRandom:
+                        DingSound.Play();
+
                         AnswerGuideText.gameObject.SetActive(true);
                         NumberAnswerIndicator.gameObject.SetActive(false);
                         NumberInputPanel.gameObject.SetActive(false);
@@ -147,7 +159,11 @@ namespace KioskTest
                                     }
                                 }
                             }
-                            answerGuideText += currentStateData.AnswerSet[correctAnswers[i]] + ", ";
+                        }
+
+                        foreach(int answer in correctAnswers)
+                        {
+                            answerGuideText += currentStateData.AnswerSet[answer] + ", ";
                         }
 
                         isShowingGuideText = true;  //위험한 코드
@@ -170,12 +186,15 @@ namespace KioskTest
 
                     NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
                     EventLogger.LogTestStart(currentState, currentStateData.ContentType);
+
+                    BeepSound.Play();
                     break;
                 case ExperimentContentType.MultipleSelectionWithRandom:
                     MultipleChoiceInput.gameObject.SetActive(true);
 
                     MultipleChoiceInput.Initialize(currentStateData.AnswerSet, currentStateData.AnswerCount);
                     EventLogger.LogTestStart(currentState, currentStateData.ContentType);
+                    BeepSound.Play();
                     break;
             }
         }
@@ -256,6 +275,7 @@ namespace KioskTest
                 //여기 isShowingGuideText 변수
 
                 isShowingGuideText = false;
+                ConfirmButton.interactable = false;
             }
             else
             {
@@ -268,6 +288,12 @@ namespace KioskTest
         public void ForceTest(int state)
         {
             currentState = state - 1;
+            DoTest();
+        }
+
+        public void ForceTest()
+        {
+            currentState -= 1;
             DoTest();
         }
     }

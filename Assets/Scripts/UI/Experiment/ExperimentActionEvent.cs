@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace KioskTest.UI
+namespace KioskTest.UI.Experiment
 {
     [Serializable]
     public class ExperimentActionEvent : UnityEvent<GameObject, ExperimentActionEvent.EventArgs>
     {
         public struct EventArgs
         {
-            public int[] Answers;
+            public long[] Answers;
             public int AnswerCount { get { return Answers.Length; } }
         }
     }

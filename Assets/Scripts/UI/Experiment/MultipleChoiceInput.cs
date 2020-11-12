@@ -1,10 +1,11 @@
-﻿using KioskTest.Input;
+﻿using KioskTest.Experiment;
+using KioskTest.Input;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KioskTest.UI
+namespace KioskTest.UI.Experiment
 {
     public class MultipleChoiceInput : MonoBehaviour
     {
@@ -22,7 +23,7 @@ namespace KioskTest.UI
         [Header("답안과 답안 버튼")]
         public int MaxAnswer = 1;
         public Button[] AnswerButtons;
-        private List<int> Answers = new List<int>();
+        private List<long> Answers = new List<long>();
 
         [Header("사용자 최종 답안 구성 이벤트")]
         public ExperimentActionEvent SelectEvent;
@@ -69,6 +70,10 @@ namespace KioskTest.UI
                     fadeDuration = 0.1f
                 };
             }
+
+            CurrentPage = 0;
+            IsMoving = false;
+            InitializePagePosition();   //currentPage 값이 이상할 수 있으니 움직임과 상관 없이 위치 결정
         }
 
         public void OnSwipe(GameObject sender, InputEvent.EventArgs args)

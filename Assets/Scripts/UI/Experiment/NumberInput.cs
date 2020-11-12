@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using KioskTest.Experiment;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KioskTest.UI
+namespace KioskTest.UI.Experiment
 {
     public class NumberInput : MonoBehaviour
     {

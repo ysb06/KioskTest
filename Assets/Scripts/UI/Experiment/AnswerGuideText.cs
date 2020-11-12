@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KioskTest.UI
+namespace KioskTest.UI.Experiment
 {
     public class AnswerGuideText : MonoBehaviour
     {
