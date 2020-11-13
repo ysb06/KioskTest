@@ -48,6 +48,7 @@ namespace KioskTest.Experiment
         public long CurrentId = -1;
         public Gender CurrentGender = Gender.None;
         public long? CurrentBirth = null;
+        public long? CurrentPhoneNumber;
 
         public void SetID(long id)
         {
@@ -64,7 +65,7 @@ namespace KioskTest.Experiment
                 TestType = testType,
                 EventList = new List<TestEvent>(),
                 Gender = CurrentGender,
-                TestTime = System.DateTime.Now
+                TestTime = DateTime.Now,
             };
             CurrentTest.EventList.Add(new TestEvent()
             {
@@ -75,6 +76,11 @@ namespace KioskTest.Experiment
             if (CurrentBirth != null)
             {
                 CurrentTest.BirthDate = CurrentBirth.Value;
+            }
+
+            if (CurrentPhoneNumber != null)
+            {
+                CurrentTest.PhoneNumber = CurrentPhoneNumber.Value;
             }
         }
 
@@ -92,6 +98,7 @@ namespace KioskTest.Experiment
                 case UnitTestEvent.Click:
                 case UnitTestEvent.Cancel:
                 case UnitTestEvent.Swipe:
+                case UnitTestEvent.End:
                     e.Position = Mouse.current.position.ReadValue();
                     break;
             }
@@ -111,13 +118,20 @@ namespace KioskTest.Experiment
             CurrentBirth = birth;
         }
 
+        public void LogPhoneNumber(long number)
+        {
+            CurrentTest.PhoneNumber = number;
+            CurrentPhoneNumber = number;
+        }
+
         public void LogTestEnd(int currentState)
         {
             CurrentTest.EventList.Add(new TestEvent()
             {
                 Event = UnitTestEvent.End,
-                Time = Time.realtimeSinceStartup
-            });
+                Time = Time.realtimeSinceStartup,
+                Position = Mouse.current.position.ReadValue()
+        });
 
             TestList.Add(CurrentTest);
         }
@@ -146,11 +160,11 @@ namespace KioskTest.Experiment
         public void ExportToCSV()
         {
             string testName = DateTime.Now.ToString("yyyyMMdd_hhmmss");
-            string data = "ID,성별,생일,단위테스트_단계,단위테스트_종류,단위테스트_시간,Event,GameTime,값,마우스x,마우스y\n";
+            string data = "ID,성별,생일,전화번호,단위테스트_단계,단위테스트_종류,단위테스트_시간,Event,GameTime,값,마우스x,마우스y\n";
 
             foreach (TestUnit unit in TestList)
             {
-                string common = unit.TesterId + "," + unit.Gender + "," + unit.BirthDate + ","
+                string common = unit.TesterId + "," + unit.Gender + "," + unit.BirthDate + "," + unit.PhoneNumber + ","
                     + unit.TestStep + "," + unit.TestType + "," + unit.TestTime.ToString() + ",";
                 foreach (TestEvent ev in unit.EventList)
                 {

@@ -180,6 +180,10 @@ namespace KioskTest.Experiment
 
             switch(currentStateData.ContentType)
             {
+                case ExperimentContentType.Number:
+                    break;
+                case ExperimentContentType.MultipleSelection:
+                    break;
                 case ExperimentContentType.NumberWithRandom:
                     NumberAnswerIndicator.gameObject.SetActive(true);
                     NumberInputPanel.gameObject.SetActive(true);
@@ -227,6 +231,9 @@ namespace KioskTest.Experiment
                             case 4:
                                 EventLogger.LogBirth(args.Answers[0]);
                                 break;
+                            case 12:
+                                EventLogger.LogPhoneNumber(args.Answers[0]);
+                                break;
                         }
                     }
                     else
@@ -258,6 +265,11 @@ namespace KioskTest.Experiment
                     ConfirmButton.interactable = isAllCorrect;
                     break;
             }
+        }
+
+        public void OnAnswerNotCompleted(GameObject sender, ExperimentActionEvent.EventArgs args)
+        {
+            ConfirmButton.interactable = false;
         }
 
         /// <summary>

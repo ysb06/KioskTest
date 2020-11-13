@@ -9,7 +9,7 @@ namespace KioskTest.UI.Experiment
 {
     public class MultipleChoiceInput : MonoBehaviour
     {
-        public const int TRANSITION_FRAME_INTERVAL = 30;
+        public const int TRANSITION_FRAME_INTERVAL = 6; //6 Frame == 0.1초
 
         public ExperimentEventLogger EventLogger;
 
@@ -90,15 +90,18 @@ namespace KioskTest.UI.Experiment
 
         public void OnSwipeEnd(GameObject sender, InputEvent.EventArgs args)
         {
-            if(NeedToTrasitRight)
+            if (gameObject.activeInHierarchy)
             {
-                SetPage(CurrentPage + 1);
-                EventLogger.LogTest(UnitTestEvent.Swipe, 1);
-            }
-            else
-            {
-                SetPage(CurrentPage - 1);
-                EventLogger.LogTest(UnitTestEvent.Swipe, -1);
+                if (NeedToTrasitRight)
+                {
+                    SetPage(CurrentPage + 1);
+                    EventLogger.LogTest(UnitTestEvent.Swipe, 1);
+                }
+                else
+                {
+                    SetPage(CurrentPage - 1);
+                    EventLogger.LogTest(UnitTestEvent.Swipe, -1);
+                }
             }
         }
 

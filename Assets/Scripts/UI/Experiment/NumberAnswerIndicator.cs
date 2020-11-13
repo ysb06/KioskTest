@@ -14,7 +14,8 @@ namespace KioskTest.UI.Experiment
         public InputField InputField2;
         public NumberInput NumberInputPanel;
         [Header("사용자 최종 답안 구성 이벤트")]
-        public ExperimentActionEvent SelectEvent;
+        public ExperimentActionEvent SelectEvent = new ExperimentActionEvent();
+        public ExperimentActionEvent SelectNotCompletedEvent = new ExperimentActionEvent();
 
         public void Initialize(string headerText, int fieldCount, int maxLength)
         {
@@ -53,6 +54,13 @@ namespace KioskTest.UI.Experiment
             if (value.Length >= sender.characterLimit)
             {
                 SelectEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
+                {
+                    Answers = answers.ToArray()
+                });
+            }
+            else
+            {
+                SelectNotCompletedEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
                 {
                     Answers = answers.ToArray()
                 });
