@@ -128,7 +128,7 @@ namespace KioskTest.Experiment
                         }
 
                         isShowingGuideText = true;  //위험한 코드
-                        ConfirmButton.interactable = true;  //이것도
+                        ConfirmButton.interactable = false;
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
                         break;
                     case ExperimentContentType.MultipleSelectionWithRandom:
@@ -167,11 +167,16 @@ namespace KioskTest.Experiment
                         }
 
                         isShowingGuideText = true;  //위험한 코드
-                        ConfirmButton.interactable = true;  //이것도
+                        ConfirmButton.interactable = false;
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
                         break;
                 }
             }
+        }
+
+        public void OnReadyToStartExperiment(GameObject sender, ExperimentActionEvent.EventArgs args)
+        {
+            ConfirmButton.interactable = true;
         }
 
         private void DoTestAfterShowAnswer()

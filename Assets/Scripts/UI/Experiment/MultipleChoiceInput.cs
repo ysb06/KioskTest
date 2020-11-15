@@ -153,8 +153,6 @@ namespace KioskTest.UI.Experiment
             {
                 Answers = Answers.ToArray()
             });
-
-
         }
 
         public void SetPage(int page)

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 20331729}
   - component: {fileID: 20331728}
   - component: {fileID: 20331727}
+  - component: {fileID: 20331731}
   m_Layer: 5
   m_Name: Button (14)
   m_TagString: Untagged
@@ -223,18 +224,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 20331729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 14
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &20331729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +262,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20331725}
   m_CullTransparentMesh: 0
+--- !u!114 &20331731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20331725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 14
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &22157689
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +455,7 @@ GameObject:
   - component: {fileID: 60211659}
   - component: {fileID: 60211658}
   - component: {fileID: 60211657}
+  - component: {fileID: 60211661}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -461,8 +480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 535, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60211657
 MonoBehaviour:
@@ -505,7 +524,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -526,18 +545,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 60211659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &60211659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +583,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60211655}
   m_CullTransparentMesh: 0
+--- !u!114 &60211661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60211655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &96394205
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,11 +903,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8627ce68c407c504794b9b2e944090b1, type: 3}
-    m_FontSize: 32
+    m_FontSize: 64
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 32
+    m_MinSize: 6
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1164,8 +1200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -186.25}
-  m_SizeDelta: {x: 710, y: 117.5}
+  m_AnchoredPosition: {x: 540, y: -463.75}
+  m_SizeDelta: {x: 1070, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318624115
 MonoBehaviour:
@@ -1499,8 +1535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -431.25}
-  m_SizeDelta: {x: 710, y: 117.5}
+  m_AnchoredPosition: {x: 540, y: -1078.75}
+  m_SizeDelta: {x: 1070, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408446261
 MonoBehaviour:
@@ -2224,6 +2260,7 @@ GameObject:
   - component: {fileID: 501760876}
   - component: {fileID: 501760875}
   - component: {fileID: 501760874}
+  - component: {fileID: 501760878}
   m_Layer: 5
   m_Name: Button (16)
   m_TagString: Untagged
@@ -2313,18 +2350,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 501760876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &501760876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2362,6 +2388,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501760872}
   m_CullTransparentMesh: 0
+--- !u!114 &501760878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501760872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 16
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &515889721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,8 +2767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -308.75}
-  m_SizeDelta: {x: 710, y: 117.5}
+  m_AnchoredPosition: {x: 540, y: -771.25}
+  m_SizeDelta: {x: 1070, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544191549
 MonoBehaviour:
@@ -2876,8 +2930,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -63.75}
-  m_SizeDelta: {x: 710, y: 117.5}
+  m_AnchoredPosition: {x: 540, y: -156.25}
+  m_SizeDelta: {x: 1070, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &561061192
 MonoBehaviour:
@@ -2942,7 +2996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587445649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3016,6 +3070,20 @@ MonoBehaviour:
   WaitTime: 3
   isOkToProceed: 0
   Content: {fileID: 806075403}
+  TextShowedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1865735968}
+        m_MethodName: OnReadyToStartExperiment
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &589480738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,27 +3450,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ActionsAsset: {fileID: -944628639613478452, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_PointAction: {fileID: -4952755673481122631, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_MoveAction: {fileID: 6234009969028471520, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_SubmitAction: {fileID: 7789033862271083496, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_CancelAction: {fileID: -7849627855547291256, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_LeftClickAction: {fileID: 5109044046520630952, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_MiddleClickAction: {fileID: 4401928498952213294, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_RightClickAction: {fileID: -4446135995180425685, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ScrollWheelAction: {fileID: 55641501498289175, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_TrackedDevicePositionAction: {fileID: 5095497768670883495, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_TrackedDeviceOrientationAction: {fileID: -2254404835387492132, guid: c58c8011794926e4abb838961cde3605,
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
@@ -3537,6 +3605,7 @@ GameObject:
   - component: {fileID: 630560556}
   - component: {fileID: 630560555}
   - component: {fileID: 630560554}
+  - component: {fileID: 630560558}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -3626,18 +3695,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 630560556}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &630560556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3675,6 +3733,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630560552}
   m_CullTransparentMesh: 0
+--- !u!114 &630560558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630560552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 11
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &666635489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,6 +3774,7 @@ GameObject:
   - component: {fileID: 666635493}
   - component: {fileID: 666635492}
   - component: {fileID: 666635491}
+  - component: {fileID: 666635495}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -3712,8 +3799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 535, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &666635491
 MonoBehaviour:
@@ -3756,7 +3843,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -3777,18 +3864,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 666635493}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &666635493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3826,6 +3902,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666635489}
   m_CullTransparentMesh: 0
+--- !u!114 &666635495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666635489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 8
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &674925747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,8 +3968,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -167.5}
-  m_SizeDelta: {x: 0, y: -685}
+  m_AnchoredPosition: {x: 0, y: -80}
+  m_SizeDelta: {x: 0, y: -660}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674925749
 MonoBehaviour:
@@ -3995,6 +4099,7 @@ GameObject:
   - component: {fileID: 687163348}
   - component: {fileID: 687163347}
   - component: {fileID: 687163346}
+  - component: {fileID: 687163350}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -4084,18 +4189,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 687163348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &687163348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4133,6 +4227,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687163344}
   m_CullTransparentMesh: 0
+--- !u!114 &687163350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687163344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &703370154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,6 +5031,7 @@ GameObject:
   - component: {fileID: 855599932}
   - component: {fileID: 855599931}
   - component: {fileID: 855599930}
+  - component: {fileID: 855599934}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -4933,8 +5056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.666664, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 176.66666, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &855599930
 MonoBehaviour:
@@ -4977,7 +5100,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -4998,18 +5121,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 855599932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &855599932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5047,6 +5159,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855599928}
   m_CullTransparentMesh: 0
+--- !u!114 &855599934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855599928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &867030413
 GameObject:
   m_ObjectHideFlags: 0
@@ -5321,6 +5461,7 @@ GameObject:
   - component: {fileID: 872235035}
   - component: {fileID: 872235034}
   - component: {fileID: 872235033}
+  - component: {fileID: 872235037}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -5410,18 +5551,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872235035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &872235035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5459,6 +5589,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872235031}
   m_CullTransparentMesh: 0
+--- !u!114 &872235037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872235031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 8
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &920826021
 GameObject:
   m_ObjectHideFlags: 0
@@ -5550,6 +5708,7 @@ GameObject:
   - component: {fileID: 935940005}
   - component: {fileID: 935940004}
   - component: {fileID: 935940003}
+  - component: {fileID: 935940007}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -5574,8 +5733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.666664, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 176.66666, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935940003
 MonoBehaviour:
@@ -5618,7 +5777,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -5639,18 +5798,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 935940005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &935940005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5688,6 +5836,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935940001}
   m_CullTransparentMesh: 0
+--- !u!114 &935940007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935940001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &944920277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5701,6 +5877,7 @@ GameObject:
   - component: {fileID: 944920281}
   - component: {fileID: 944920280}
   - component: {fileID: 944920279}
+  - component: {fileID: 944920283}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -5725,8 +5902,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.666664, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 176.66666, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &944920279
 MonoBehaviour:
@@ -5769,7 +5946,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -5790,18 +5967,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 944920281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &944920281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5839,6 +6005,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944920277}
   m_CullTransparentMesh: 0
+--- !u!114 &944920283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944920277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 7
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &967545240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,6 +6046,7 @@ GameObject:
   - component: {fileID: 967545244}
   - component: {fileID: 967545243}
   - component: {fileID: 967545242}
+  - component: {fileID: 967545246}
   m_Layer: 5
   m_Name: Button (13)
   m_TagString: Untagged
@@ -5941,18 +6136,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 967545244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 13
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &967545244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5990,6 +6174,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967545240}
   m_CullTransparentMesh: 0
+--- !u!114 &967545246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967545240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 13
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &983845088
 GameObject:
   m_ObjectHideFlags: 0
@@ -6061,87 +6273,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983845088}
   m_CullTransparentMesh: 0
---- !u!1 &1018533856
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1018533858}
-  - component: {fileID: 1018533857}
-  m_Layer: 0
-  m_Name: replay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1018533857
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018533856}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 642918a17ca296342bbbfa4b74c6cd2a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1018533858
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018533856}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1043.4117, y: 1885.3668, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041338315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6155,6 +6286,7 @@ GameObject:
   - component: {fileID: 1041338319}
   - component: {fileID: 1041338318}
   - component: {fileID: 1041338317}
+  - component: {fileID: 1041338321}
   m_Layer: 5
   m_Name: Button (12)
   m_TagString: Untagged
@@ -6244,18 +6376,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041338319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 12
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1041338319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6293,6 +6414,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041338315}
   m_CullTransparentMesh: 0
+--- !u!114 &1041338321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041338315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 12
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1069971323
 GameObject:
   m_ObjectHideFlags: 0
@@ -6306,6 +6455,7 @@ GameObject:
   - component: {fileID: 1069971327}
   - component: {fileID: 1069971326}
   - component: {fileID: 1069971325}
+  - component: {fileID: 1069971329}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -6395,18 +6545,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1069971327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1069971327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6444,6 +6583,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069971323}
   m_CullTransparentMesh: 0
+--- !u!114 &1069971329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069971323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1088372651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6824,6 +6991,7 @@ GameObject:
   - component: {fileID: 1188141881}
   - component: {fileID: 1188141880}
   - component: {fileID: 1188141879}
+  - component: {fileID: 1188141883}
   m_Layer: 5
   m_Name: Button (15)
   m_TagString: Untagged
@@ -6913,18 +7081,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1188141881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 15
-          m_FloatArgument: 0
-          m_StringArgument: .
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1188141881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6962,6 +7119,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188141877}
   m_CullTransparentMesh: 0
+--- !u!114 &1188141883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188141877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 15
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1217223027
 GameObject:
   m_ObjectHideFlags: 0
@@ -7485,6 +7670,7 @@ GameObject:
   - component: {fileID: 1311812943}
   - component: {fileID: 1311812942}
   - component: {fileID: 1311812941}
+  - component: {fileID: 1311812945}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -7509,8 +7695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 593.3333, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 893.33325, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1311812941
 MonoBehaviour:
@@ -7553,7 +7739,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -7574,18 +7760,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1311812943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1311812943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7623,6 +7798,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311812939}
   m_CullTransparentMesh: 0
+--- !u!114 &1311812945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311812939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1321412113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7636,6 +7839,7 @@ GameObject:
   - component: {fileID: 1321412117}
   - component: {fileID: 1321412116}
   - component: {fileID: 1321412115}
+  - component: {fileID: 1321412119}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -7660,8 +7864,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 535, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321412115
 MonoBehaviour:
@@ -7704,7 +7908,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -7725,18 +7929,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1321412117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1321412117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7774,6 +7967,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321412113}
   m_CullTransparentMesh: 0
+--- !u!114 &1321412119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321412113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1327626901
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,7 +8213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -140}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 0, y: 320}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1340175140
@@ -8123,6 +8344,7 @@ GameObject:
   - component: {fileID: 1415913542}
   - component: {fileID: 1415913541}
   - component: {fileID: 1415913540}
+  - component: {fileID: 1415913544}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -8147,8 +8369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 593.3333, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 893.33325, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1415913540
 MonoBehaviour:
@@ -8191,7 +8413,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -8212,18 +8434,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1415913542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1415913542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8261,6 +8472,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415913538}
   m_CullTransparentMesh: 0
+--- !u!114 &1415913544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415913538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1416860078
 GameObject:
   m_ObjectHideFlags: 0
@@ -8352,6 +8591,7 @@ GameObject:
   - component: {fileID: 1437984217}
   - component: {fileID: 1437984216}
   - component: {fileID: 1437984215}
+  - component: {fileID: 1437984219}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -8441,18 +8681,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1437984217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1437984217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8490,6 +8719,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437984213}
   m_CullTransparentMesh: 0
+--- !u!114 &1437984219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437984213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1440041803
 GameObject:
   m_ObjectHideFlags: 0
@@ -8842,6 +9099,7 @@ GameObject:
   - component: {fileID: 1517970266}
   - component: {fileID: 1517970265}
   - component: {fileID: 1517970264}
+  - component: {fileID: 1517970268}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -8866,8 +9124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.666664, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 176.66666, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517970264
 MonoBehaviour:
@@ -8910,7 +9168,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -8931,18 +9189,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1517970266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: .
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1517970266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8980,6 +9227,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517970262}
   m_CullTransparentMesh: 0
+--- !u!114 &1517970268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517970262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: .
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1536998857
 GameObject:
   m_ObjectHideFlags: 0
@@ -9199,6 +9474,7 @@ GameObject:
   - component: {fileID: 1701800556}
   - component: {fileID: 1701800555}
   - component: {fileID: 1701800554}
+  - component: {fileID: 1701800558}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -9223,8 +9499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 593.3333, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 893.33325, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1701800554
 MonoBehaviour:
@@ -9267,7 +9543,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -9288,18 +9564,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1701800556}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1701800556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9337,6 +9602,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701800552}
   m_CullTransparentMesh: 0
+--- !u!114 &1701800558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701800552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1706292620
 GameObject:
   m_ObjectHideFlags: 0
@@ -9742,6 +10035,7 @@ GameObject:
   - component: {fileID: 1784334372}
   - component: {fileID: 1784334371}
   - component: {fileID: 1784334370}
+  - component: {fileID: 1784334374}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -9831,18 +10125,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1784334372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1784334372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9880,6 +10163,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784334368}
   m_CullTransparentMesh: 0
+--- !u!114 &1784334374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784334368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1815513647
 GameObject:
   m_ObjectHideFlags: 0
@@ -9893,6 +10204,7 @@ GameObject:
   - component: {fileID: 1815513651}
   - component: {fileID: 1815513650}
   - component: {fileID: 1815513649}
+  - component: {fileID: 1815513653}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -9917,8 +10229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 593.3333, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 893.33325, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1815513649
 MonoBehaviour:
@@ -9961,7 +10273,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -9982,18 +10294,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1815513651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1815513651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10031,6 +10332,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815513647}
   m_CullTransparentMesh: 0
+--- !u!114 &1815513653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815513647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 9
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1815563925
 GameObject:
   m_ObjectHideFlags: 0
@@ -10109,6 +10438,7 @@ GameObject:
   - component: {fileID: 1859159537}
   - component: {fileID: 1859159536}
   - component: {fileID: 1859159535}
+  - component: {fileID: 1859159539}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -10198,18 +10528,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1859159537}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1859159537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10247,6 +10566,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859159533}
   m_CullTransparentMesh: 0
+--- !u!114 &1859159539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859159533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1865735966
 GameObject:
   m_ObjectHideFlags: 0
@@ -10445,6 +10792,7 @@ GameObject:
   - component: {fileID: 1921791502}
   - component: {fileID: 1921791501}
   - component: {fileID: 1921791500}
+  - component: {fileID: 1921791504}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -10534,18 +10882,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1921791502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1921791502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10583,6 +10920,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921791498}
   m_CullTransparentMesh: 0
+--- !u!114 &1921791504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921791498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1950432707
 GameObject:
   m_ObjectHideFlags: 0
@@ -10783,6 +11148,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1865735968}
         m_MethodName: OnAnswerSelected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  SelectNotCompletedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1865735968}
+        m_MethodName: OnAnswerNotCompleted
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11272,6 +11651,7 @@ GameObject:
   - component: {fileID: 2012992702}
   - component: {fileID: 2012992701}
   - component: {fileID: 2012992700}
+  - component: {fileID: 2012992704}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -11361,18 +11741,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2012992702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: .
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2012992702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11410,6 +11779,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012992698}
   m_CullTransparentMesh: 0
+--- !u!114 &2012992704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012992698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 7
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2027013349
 GameObject:
   m_ObjectHideFlags: 0
@@ -11579,6 +11976,7 @@ GameObject:
   - component: {fileID: 2041868638}
   - component: {fileID: 2041868637}
   - component: {fileID: 2041868636}
+  - component: {fileID: 2041868640}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -11603,8 +12001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -58.75}
-  m_SizeDelta: {x: 233.33333, y: 117.5}
+  m_AnchoredPosition: {x: 535, y: -151.25}
+  m_SizeDelta: {x: 353.3333, y: 302.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2041868636
 MonoBehaviour:
@@ -11647,7 +12045,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_HighlightedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
@@ -11668,18 +12066,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2041868638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401107375}
-        m_MethodName: OnNumberButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2041868638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11717,6 +12104,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041868634}
   m_CullTransparentMesh: 0
+--- !u!114 &2041868640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041868634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 401107375}
+          m_MethodName: OnNumberButtonClicked
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2044232268
 GameObject:
   m_ObjectHideFlags: 0
@@ -12143,6 +12558,7 @@ GameObject:
   - component: {fileID: 2071668537}
   - component: {fileID: 2071668536}
   - component: {fileID: 2071668535}
+  - component: {fileID: 2071668539}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -12232,18 +12648,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2071668537}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2071668537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12281,6 +12686,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071668533}
   m_CullTransparentMesh: 0
+--- !u!114 &2071668539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071668533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 9
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2094964412
 GameObject:
   m_ObjectHideFlags: 0
@@ -12630,6 +13063,8 @@ GameObject:
   - component: {fileID: 2104984439}
   - component: {fileID: 2104984438}
   - component: {fileID: 2104984437}
+  - component: {fileID: 2104984441}
+  - component: {fileID: 2104984440}
   m_Layer: 5
   m_Name: Confirm Button
   m_TagString: Untagged
@@ -12652,10 +13087,10 @@ RectTransform:
   m_Father: {fileID: 515889722}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: 50}
-  m_SizeDelta: {x: 320, y: 75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 250}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2104984437
 MonoBehaviour:
@@ -12678,10 +13113,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -12699,18 +13134,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2104984438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1865735968}
-        m_MethodName: OnAnswerConfirmed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2104984438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12748,6 +13172,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104984435}
   m_CullTransparentMesh: 0
+--- !u!114 &2104984440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104984435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629647f59fa6e0a42942f649fe954647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Logger: {fileID: 524717451}
+  target: {fileID: 2104984437}
+  OnConfirm:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1865735968}
+        m_MethodName: OnAnswerConfirmed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2104984441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104984435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2104984440}
+          m_MethodName: OnConfirmButtonClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2107687070
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,6 +13397,7 @@ GameObject:
   - component: {fileID: 2110105070}
   - component: {fileID: 2110105069}
   - component: {fileID: 2110105068}
+  - component: {fileID: 2110105072}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -13006,18 +13487,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2110105070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1598214883}
-        m_MethodName: OnChoiceSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2110105070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13055,6 +13525,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110105066}
   m_CullTransparentMesh: 0
+--- !u!114 &2110105072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110105066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1598214883}
+          m_MethodName: OnChoiceSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2132560080
 GameObject:
   m_ObjectHideFlags: 0

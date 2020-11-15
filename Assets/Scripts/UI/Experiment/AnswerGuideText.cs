@@ -11,6 +11,7 @@ namespace KioskTest.UI.Experiment
         public float WaitTime = 3;
         public bool isOkToProceed = false;
         public Text Content;
+        public ExperimentActionEvent TextShowedEvent = new ExperimentActionEvent();
 
         public void Initialize(string answer, Action callback)
         {
@@ -30,6 +31,10 @@ namespace KioskTest.UI.Experiment
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
+            TextShowedEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
+            {
+                // No Result
+            });
             yield return new WaitUntil(() => isOkToProceed);
             isOkToProceed = false;
             gameObject.SetActive(false);
