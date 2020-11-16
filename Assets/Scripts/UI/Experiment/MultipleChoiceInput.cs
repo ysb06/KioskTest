@@ -107,52 +107,55 @@ namespace KioskTest.UI.Experiment
 
         public void OnChoiceSelected(int id)
         {
-            int listId = id - 1;
-
-            if(Answers.Contains(listId))
-            {   //있는 답안은 제거
-                Answers.Remove(listId);
-                AnswerButtons[listId].colors = new ColorBlock()
-                {
-                    normalColor = Color.white,
-                    highlightedColor = Color.white,
-                    pressedColor = Color.white,
-                    selectedColor = Color.white,
-                    disabledColor = Color.red,
-                    colorMultiplier = 1,
-                    fadeDuration = 0.1f
-                };
-                EventLogger.LogTest(UnitTestEvent.Cancel, id);
-            }
-            else
+            if (IsMoving == false)
             {
-                EventLogger.LogTest(UnitTestEvent.Click, id);
-                //없는 답안은 추가
-                if (Answers.Count < MaxAnswer)
-                {
-                    Answers.Add(listId);
+                int listId = id - 1;
+
+                if (Answers.Contains(listId))
+                {   //있는 답안은 제거
+                    Answers.Remove(listId);
                     AnswerButtons[listId].colors = new ColorBlock()
                     {
-                        normalColor = Color.grey,
-                        highlightedColor = Color.grey,
-                        pressedColor = Color.grey,
-                        selectedColor = Color.grey,
+                        normalColor = Color.white,
+                        highlightedColor = Color.white,
+                        pressedColor = Color.white,
+                        selectedColor = Color.white,
                         disabledColor = Color.red,
                         colorMultiplier = 1,
                         fadeDuration = 0.1f
                     };
-
-                    if(Answers.Count >= MaxAnswer)
+                    EventLogger.LogTest(UnitTestEvent.Cancel, id);
+                }
+                else
+                {
+                    EventLogger.LogTest(UnitTestEvent.Click, id);
+                    //없는 답안은 추가
+                    if (Answers.Count < MaxAnswer)
                     {
-                        EventLogger.LogTest(UnitTestEvent.Answer, id);
+                        Answers.Add(listId);
+                        AnswerButtons[listId].colors = new ColorBlock()
+                        {
+                            normalColor = Color.grey,
+                            highlightedColor = Color.grey,
+                            pressedColor = Color.grey,
+                            selectedColor = Color.grey,
+                            disabledColor = Color.red,
+                            colorMultiplier = 1,
+                            fadeDuration = 0.1f
+                        };
+
+                        if (Answers.Count >= MaxAnswer)
+                        {
+                            EventLogger.LogTest(UnitTestEvent.Answer, id);
+                        }
                     }
                 }
-            }
 
-            SelectEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
-            {
-                Answers = Answers.ToArray()
-            });
+                SelectEvent.Invoke(gameObject, new ExperimentActionEvent.EventArgs()
+                {
+                    Answers = Answers.ToArray()
+                });
+            }
         }
 
         public void SetPage(int page)
@@ -161,6 +164,10 @@ namespace KioskTest.UI.Experiment
             {
                 indicatorSwitcher.SetCurrentPage(page);
                 StartCoroutine(ChangePage(page));
+            }
+            else if(IsMoving == false)
+            {
+                StartCoroutine(ChangePage());
             }
         }
 
@@ -182,6 +189,17 @@ namespace KioskTest.UI.Experiment
             CurrentPage = page;
             IsMoving = false;
             InitializePagePosition();   //currentPage 값이 이상할 수 있으니 움직임과 상관 없이 위치 결정
+        }
+
+        /// <summary>
+        /// 가짜 움직임 코드, 클릭 방지, 임시 방편이므로 사용 자제
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator ChangePage()
+        {
+            IsMoving = true;
+            yield return new WaitForSeconds(TRANSITION_FRAME_INTERVAL / 60);
+            IsMoving = false;
         }
 
         /// <summary>

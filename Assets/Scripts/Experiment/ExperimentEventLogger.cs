@@ -61,6 +61,7 @@ namespace KioskTest.Experiment
         {
             CurrentTest = new TestUnit()
             {
+                TesterId = CurrentId,
                 TestStep = currentStep,
                 TestType = testType,
                 EventList = new List<TestEvent>(),
@@ -84,7 +85,7 @@ namespace KioskTest.Experiment
             }
         }
 
-        public void LogTest(UnitTestEvent eventType, int value)
+        public void LogTest(UnitTestEvent eventType, long value)
         {
             TestEvent e = new TestEvent()
             {
@@ -159,7 +160,11 @@ namespace KioskTest.Experiment
 
         public void ExportToCSV()
         {
-            string testName = DateTime.Now.ToString("yyyyMMdd_hhmmss");
+            ExportToCSV(DateTime.Now.ToString("yyyyMMdd_hhmmss"), true);
+        }
+
+        public void ExportToCSV(string testName, bool isShowExplorer)
+        {
             string data = "ID,성별,생일,전화번호,단위테스트_단계,단위테스트_종류,단위테스트_시간,Event,GameTime,값,마우스x,마우스y\n";
 
             foreach (TestUnit unit in TestList)
@@ -177,7 +182,15 @@ namespace KioskTest.Experiment
             sw.Write(data);
             sw.Close();
 
-            Application.OpenURL(Application.persistentDataPath);
+            if (isShowExplorer)
+            {
+                Application.OpenURL(Application.persistentDataPath);
+            }
+        }
+
+        public void BackupCSV()
+        {
+            ExportToCSV("Backup.csv", false);
         }
     }
 
@@ -202,7 +215,7 @@ namespace KioskTest.Experiment
     {
         public UnitTestEvent Event;
         public float Time;
-        public int Value;
+        public long Value;
         public Vector2 Position;
     }
 }

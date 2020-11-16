@@ -37,10 +37,10 @@ namespace KioskTest.Experiment
         /// <summary>
         /// 다중 선택 실험에서 응답 리스트
         /// </summary>
-        public string[] AnswerSet { get; private set; }
+        public string[] AnswerSet { get; set; }
 
         /// <summary>
-        /// 응답 수, 숫자 타입의 실험에서는 2이상의 수에서 Input Field가 2개 표시, 다중 선택 실험에서는 무시됨
+        /// 응답 수, 숫자 타입의 실험에서는 2이상의 수에서 Input Field가 2개 표시, 다중 선택 실험에서는 선택 가능 최대 갯수
         /// </summary>
         public int AnswerCount { get; private set; }
 

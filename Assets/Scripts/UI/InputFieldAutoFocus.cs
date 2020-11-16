@@ -41,7 +41,7 @@ namespace KioskTest.UI
                         InputPanel.Target = NextField;
                     }
                 }
-                EventLogger.LogTest(UnitTestEvent.Answer, int.Parse(value));
+                EventLogger.LogTest(UnitTestEvent.Answer, long.Parse(value));
             }
 
             if (value != string.Empty)

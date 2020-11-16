@@ -10,7 +10,7 @@ namespace KioskTest.Experiment
 {
     public class ExperimentController : MonoBehaviour
     {
-        private ExperimentControllerData data = new ExperimentControllerData();
+        public ExperimentControllerData data = new ExperimentControllerData();
 
         public ExperimentEventLogger EventLogger;
         public int currentState = -1;
@@ -105,27 +105,14 @@ namespace KioskTest.Experiment
                         MultipleChoiceInput.gameObject.SetActive(false);
 
                         //정답 랜덤 생성
-                        answerRange = currentStateData.AnswerMaxLength * 10;
-                        correctAnswers = new int[currentStateData.AnswerCount];
-                        answerGuideText = "";
-                        for (int i = 0; i < correctAnswers.Length; i++)
+                        answerRange = 1;
+                        for (int i = 0; i < currentStateData.AnswerMaxLength; i++)
                         {
-                            bool isNotOk = true;
-                            while (isNotOk)
-                            {
-                                correctAnswers[i] = Random.Range(1, answerRange - 1);
-                                isNotOk = false;
-                                for (int j = 0; j < i; j++)
-                                {
-                                    if (correctAnswers[i] == correctAnswers[j])
-                                    {
-                                        isNotOk = false;
-                                        i--;
-                                    }
-                                }
-                            }
-                            answerGuideText += correctAnswers[i] + ", ";
+                            answerRange *= 10;
                         }
+                        correctAnswers = GenerateRandomAnswer(1, answerRange, currentStateData.AnswerCount);
+                        answerGuideText = GenerateAnswerText(correctAnswers);
+
 
                         isShowingGuideText = true;  //위험한 코드
                         ConfirmButton.interactable = false;
@@ -140,31 +127,9 @@ namespace KioskTest.Experiment
                         MultipleChoiceInput.gameObject.SetActive(false);
 
                         //정답 랜덤 생성
-                        answerRange = currentStateData.AnswerSet.Length;
-                        correctAnswers = new int[currentStateData.AnswerCount];
-                        answerGuideText = "";
-                        for (int i = 0; i < correctAnswers.Length; i++)
-                        {
-                            bool isNotOk = true;
-                            while(isNotOk)
-                            {
-                                correctAnswers[i] = Random.Range(1, answerRange - 1);
-                                isNotOk = false;
-                                for(int j = 0; j < i; j++)
-                                {
-                                    if (correctAnswers[i] == correctAnswers[j])
-                                    {
-                                        isNotOk = false;
-                                        i--;
-                                    }
-                                }
-                            }
-                        }
-
-                        foreach(int answer in correctAnswers)
-                        {
-                            answerGuideText += currentStateData.AnswerSet[answer] + ", ";
-                        }
+                        answerRange = currentStateData.AnswerMaxLength;
+                        correctAnswers = GenerateRandomAnswer(0, answerRange, currentStateData.AnswerCount);
+                        answerGuideText = GenerateAnswerText(correctAnswers, currentStateData.AnswerSet);
 
                         isShowingGuideText = true;  //위험한 코드
                         ConfirmButton.interactable = false;
@@ -172,6 +137,56 @@ namespace KioskTest.Experiment
                         break;
                 }
             }
+        }
+
+        private int[] GenerateRandomAnswer(int start, int end, int size)
+        {
+            int[] result = new int[size];
+            HashSet<int> resultSet = new HashSet<int>();
+
+            while(resultSet.Count < size)
+            {
+                resultSet.Add(Random.Range(start, end));
+            }
+
+            resultSet.CopyTo(result);
+            return result;
+        }
+
+        private string GenerateAnswerText(int[] answers)
+        {
+            string result = string.Empty;
+            for (int i = 0; i < correctAnswers.Length; i++)
+            {
+                if (i != correctAnswers.Length - 1)
+                {
+                    result += correctAnswers[i] + ", ";
+                }
+                else
+                {
+                    result += correctAnswers[i].ToString();
+                }
+            }
+
+            return result;
+        }
+
+        private string GenerateAnswerText(int[] answers, string[] answerTexts)
+        {
+            string result = string.Empty;
+            for (int i = 0; i < correctAnswers.Length; i++)
+            {
+                if (i != correctAnswers.Length - 1)
+                {
+                    result += answerTexts[correctAnswers[i]] + ", ";
+                }
+                else
+                {
+                    result += answerTexts[correctAnswers[i]];
+                }
+            }
+
+            return result;
         }
 
         public void OnReadyToStartExperiment(GameObject sender, ExperimentActionEvent.EventArgs args)
@@ -298,6 +313,7 @@ namespace KioskTest.Experiment
             {
                 EventLogger.LogTestEnd(currentState);
                 EventLogger.ShowCurrent();
+                EventLogger.BackupCSV();
                 DoTest();
             }
         }
