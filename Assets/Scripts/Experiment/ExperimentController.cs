@@ -76,12 +76,20 @@ namespace KioskTest.Experiment
                         DingSound.Play();
 
                         AnswerGuideText.gameObject.SetActive(false);
-                        NumberAnswerIndicator.gameObject.SetActive(true);
-                        NumberInputPanel.gameObject.SetActive(true);
                         MultipleChoiceInput.gameObject.SetActive(false);
+                        NumberAnswerIndicator.gameObject.SetActive(false);
+                        NumberInputPanel.gameObject.SetActive(false);
 
                         NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
-                        EventLogger.LogTestStart(currentState, currentStateData.ContentType);
+                        if(currentState == 0)
+                        {
+                            DingSound.Stop();
+                            DoTestAfterShowAnswer();
+                        }
+                        else
+                        {
+                            StartCoroutine(WaitUser());
+                        }
                         break;
                     case ExperimentContentType.MultipleSelection:
                         DingSound.Play();
@@ -89,10 +97,9 @@ namespace KioskTest.Experiment
                         AnswerGuideText.gameObject.SetActive(false);
                         NumberAnswerIndicator.gameObject.SetActive(false);
                         NumberInputPanel.gameObject.SetActive(false);
-                        MultipleChoiceInput.gameObject.SetActive(true);
+                        MultipleChoiceInput.gameObject.SetActive(false);
 
-                        MultipleChoiceInput.Initialize(currentStateData.AnswerSet, currentStateData.AnswerCount);
-                        EventLogger.LogTestStart(currentState, currentStateData.ContentType);
+                        StartCoroutine(WaitUser());
                         break;
 
                     //랜덤 정답을 생성해야 하는 경우
@@ -194,6 +201,14 @@ namespace KioskTest.Experiment
             ConfirmButton.interactable = true;
         }
 
+        //이쯤 되면 코드 다시 짜야 할 듯
+
+        private IEnumerator WaitUser()
+        {
+            yield return new WaitForSeconds(AnswerGuideText.WaitTime);  //AnswerGuideText와 시간 맞춤
+            DoTestAfterShowAnswer();
+        }
+
         private void DoTestAfterShowAnswer()
         {   
             ExperimentState currentStateData = data.States[currentState];
@@ -201,9 +216,6 @@ namespace KioskTest.Experiment
             switch(currentStateData.ContentType)
             {
                 case ExperimentContentType.Number:
-                    break;
-                case ExperimentContentType.MultipleSelection:
-                    break;
                 case ExperimentContentType.NumberWithRandom:
                     NumberAnswerIndicator.gameObject.SetActive(true);
                     NumberInputPanel.gameObject.SetActive(true);
@@ -213,6 +225,7 @@ namespace KioskTest.Experiment
 
                     BeepSound.Play();
                     break;
+                case ExperimentContentType.MultipleSelection:
                 case ExperimentContentType.MultipleSelectionWithRandom:
                     MultipleChoiceInput.gameObject.SetActive(true);
 
