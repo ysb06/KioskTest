@@ -339,6 +339,7 @@ namespace KioskTest.Experiment
 
         public void ForceTest()
         {
+            EventLogger.LogTest(UnitTestEvent.Restart, -1);
             currentState -= 1;
             DoTest();
         }

@@ -36,8 +36,12 @@ namespace KioskTest.Experiment
         /// </summary>
         Answer,
         /// <summary>
-        /// 사용자가 실제로 Confirm 버튼을 누른 시점
+        /// 실험 재시작
         /// </summary>
+        Restart,
+        /// <summary>
+        /// 사용자가 실제로 Confirm 버튼을 누른 시점
+        /// </summary>      
         End
     }
 
@@ -190,7 +194,7 @@ namespace KioskTest.Experiment
 
         public void BackupCSV()
         {
-            ExportToCSV("Backup.csv", false);
+            ExportToCSV("Backup", false);
         }
     }
 
