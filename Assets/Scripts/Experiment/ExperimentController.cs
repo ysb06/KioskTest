@@ -81,7 +81,7 @@ namespace KioskTest.Experiment
                         NumberInputPanel.gameObject.SetActive(false);
 
                         NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
-                        if(currentState == 0)
+                        if (currentState == 0)
                         {
                             DingSound.Stop();
                             DoTestAfterShowAnswer();
@@ -133,6 +133,9 @@ namespace KioskTest.Experiment
                         NumberInputPanel.gameObject.SetActive(false);
                         MultipleChoiceInput.gameObject.SetActive(false);
 
+                        //선택지 랜덤 배열
+                        currentStateData.AnswerSet = GenerateRandomAnswerSet(currentStateData.AnswerSet);
+
                         //정답 랜덤 생성
                         answerRange = currentStateData.AnswerMaxLength;
                         correctAnswers = GenerateRandomAnswer(0, answerRange, currentStateData.AnswerCount);
@@ -145,13 +148,39 @@ namespace KioskTest.Experiment
                 }
             }
         }
+        private string[] GenerateRandomAnswerSet(string[] target)
+        {
+            string[] result = new string[target.Length];
+
+            foreach (string str in target)
+            {
+                int pos = -1;
+                do
+                {
+                    pos = Random.Range(0, result.Length);
+
+                } while (result[pos] != null);
+                result[pos] = str;
+            }
+            System.Array.Sort(result, (string s1, string s2) =>
+            {
+                //print((s1 == " ") + ", " + (s2 == " "));
+
+                if (s1 == " " && s2 == " ") return 0;
+                else if (s1 != " " && s2 != " ") return 0;
+                else if (s1 == " ") return 1;
+                else return -1;
+            });
+
+            return result;
+        }
 
         private int[] GenerateRandomAnswer(int start, int end, int size)
         {
             int[] result = new int[size];
             HashSet<int> resultSet = new HashSet<int>();
 
-            while(resultSet.Count < size)
+            while (resultSet.Count < size)
             {
                 resultSet.Add(Random.Range(start, end));
             }
@@ -210,10 +239,10 @@ namespace KioskTest.Experiment
         }
 
         private void DoTestAfterShowAnswer()
-        {   
+        {
             ExperimentState currentStateData = data.States[currentState];
 
-            switch(currentStateData.ContentType)
+            switch (currentStateData.ContentType)
             {
                 case ExperimentContentType.Number:
                 case ExperimentContentType.NumberWithRandom:
@@ -253,7 +282,7 @@ namespace KioskTest.Experiment
                         ConfirmButton.interactable = true;
 
                         //주의: State List가 바뀌면 실제 성별이나 생일을 묻는 질문인지 검토 필요
-                        switch(currentState)
+                        switch (currentState)
                         {
                             case 0:
                                 EventLogger.SetID(args.Answers[0]);
@@ -282,12 +311,12 @@ namespace KioskTest.Experiment
                         break;
                     }
                     bool isAllCorrect = true;
-                    foreach(int answer in args.Answers)
+                    foreach (int answer in args.Answers)
                     {
                         bool isCorrect = false;
-                        foreach(int correctAnswer in correctAnswers)
+                        foreach (int correctAnswer in correctAnswers)
                         {
-                            if(correctAnswer == answer)
+                            if (correctAnswer == answer)
                             {
                                 isCorrect = true;
                             }
@@ -310,7 +339,7 @@ namespace KioskTest.Experiment
         /// </summary>
         public void OnAnswerConfirmed()
         {
-            if(isShowingGuideText)
+            if (isShowingGuideText)
             {
                 AnswerGuideText.isOkToProceed = true;   //이거 위험한 코드
                 //실험 진행...코드가 꼬일 수 있음

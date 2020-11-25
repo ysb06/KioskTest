@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace KioskTest.Experiment {
 
@@ -8,6 +9,7 @@ namespace KioskTest.Experiment {
     //척결 대상
     public class JJECustomizer : MonoBehaviour
     {
+        public Button[] Targets;
         // Start is called before the first frame update
         void Start()
         {

@@ -63,9 +63,9 @@ namespace KioskTest.UI.Experiment
                 {
                     normalColor = Color.white,
                     highlightedColor = Color.white,
-                    pressedColor = Color.white,
+                    pressedColor = Color.gray,
                     selectedColor = Color.white,
-                    disabledColor = Color.red,
+                    disabledColor = Color.gray,
                     colorMultiplier = 1,
                     fadeDuration = 0.1f
                 };
@@ -118,9 +118,9 @@ namespace KioskTest.UI.Experiment
                     {
                         normalColor = Color.white,
                         highlightedColor = Color.white,
-                        pressedColor = Color.white,
+                        pressedColor = Color.gray,
                         selectedColor = Color.white,
-                        disabledColor = Color.red,
+                        disabledColor = Color.gray,
                         colorMultiplier = 1,
                         fadeDuration = 0.1f
                     };
@@ -139,7 +139,7 @@ namespace KioskTest.UI.Experiment
                             highlightedColor = Color.grey,
                             pressedColor = Color.grey,
                             selectedColor = Color.grey,
-                            disabledColor = Color.red,
+                            disabledColor = Color.gray,
                             colorMultiplier = 1,
                             fadeDuration = 0.1f
                         };
