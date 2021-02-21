@@ -14,7 +14,9 @@ namespace KioskTest.Experiment
 
         public ExperimentEventLogger EventLogger;
         public int currentState = -1;
+        public Shuffler.ShuffleController ShuffleController;
 
+        [Space(20)]
         public AudioSource DingSound;
         public AudioSource BeepSound;
 
@@ -56,7 +58,7 @@ namespace KioskTest.Experiment
                 MainGuideTextUI.text = currentStateData.MainGuideText;  //제목 설정
                 ConfirmButton.interactable = false;
                 ConfirmButton.GetComponentInChildren<Text>().text = "확인";
-
+                ShuffleController.SetShuffle(currentState);
 
                 int answerRange;
                 string answerGuideText;
