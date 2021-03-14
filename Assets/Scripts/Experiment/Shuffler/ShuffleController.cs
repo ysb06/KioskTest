@@ -10,6 +10,7 @@ namespace KioskTest.Experiment.Shuffler
 
         public void SetShuffle(int state)
         {
+            /* 전체 실험 섞는 코드
             switch(state)
             {
                 case 0:
@@ -72,6 +73,20 @@ namespace KioskTest.Experiment.Shuffler
                     break;
                 default:
                     print("Error in: " + state);
+                    foreach (MC_Shuffler shuffler in Shufflers)
+                    {
+                        shuffler.SortOrder();
+                    }
+                    break;
+            }
+            */
+            switch (state)
+            {
+                case 13:
+                case 14:
+                    Shufflers[0].Shuffle();
+                    break;
+                default:
                     foreach (MC_Shuffler shuffler in Shufflers)
                     {
                         shuffler.SortOrder();

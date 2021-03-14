@@ -293,9 +293,11 @@ namespace KioskTest.Experiment
                                 EventLogger.LogGender((Gender)args.Answers[0] + 1);
                                 break;
                             case 4:
+                            case 13:
                                 EventLogger.LogBirth(args.Answers[0]);
                                 break;
                             case 12:
+                            case 14:
                                 EventLogger.LogPhoneNumber(args.Answers[0]);
                                 break;
                         }
