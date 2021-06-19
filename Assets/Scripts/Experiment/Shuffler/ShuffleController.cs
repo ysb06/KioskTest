@@ -82,8 +82,9 @@ namespace KioskTest.Experiment.Shuffler
             */
             switch (state)
             {
-                case 13:
-                case 14:
+                case 4:
+                case 12:
+                case 16:
                     Shufflers[0].Shuffle();
                     break;
                 default:

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace KioskTest.Experiment
 {
@@ -114,14 +115,9 @@ namespace KioskTest.Experiment
                         MultipleChoiceInput.gameObject.SetActive(false);
 
                         //정답 랜덤 생성
-                        answerRange = 1;
-                        for (int i = 0; i < currentStateData.AnswerMaxLength; i++)
-                        {
-                            answerRange *= 10;
-                        }
-                        correctAnswers = GenerateRandomAnswer(1, answerRange, currentStateData.AnswerCount);
+                        answerRange = (int)Math.Pow(10, currentStateData.AnswerMaxLength);
+                        correctAnswers = GenerateRandomAnswer(answerRange / 10, answerRange, currentStateData.AnswerCount);
                         answerGuideText = GenerateAnswerText(correctAnswers);
-
 
                         isShowingGuideText = true;  //위험한 코드
                         ConfirmButton.interactable = false;
@@ -159,7 +155,7 @@ namespace KioskTest.Experiment
                 int pos = -1;
                 do
                 {
-                    pos = Random.Range(0, result.Length);
+                    pos = UnityEngine.Random.Range(0, result.Length);
 
                 } while (result[pos] != null);
                 result[pos] = str;
@@ -184,7 +180,7 @@ namespace KioskTest.Experiment
 
             while (resultSet.Count < size)
             {
-                resultSet.Add(Random.Range(start, end));
+                resultSet.Add(UnityEngine.Random.Range(start, end));
             }
 
             resultSet.CopyTo(result);
@@ -194,15 +190,15 @@ namespace KioskTest.Experiment
         private string GenerateAnswerText(int[] answers)
         {
             string result = string.Empty;
-            for (int i = 0; i < correctAnswers.Length; i++)
+            for (int i = 0; i < answers.Length; i++)
             {
-                if (i != correctAnswers.Length - 1)
+                if (i != answers.Length - 1)
                 {
-                    result += correctAnswers[i] + ", ";
+                    result += answers[i] + ", ";
                 }
                 else
                 {
-                    result += correctAnswers[i].ToString();
+                    result += answers[i].ToString();
                 }
             }
 
@@ -329,8 +325,20 @@ namespace KioskTest.Experiment
                         isAllCorrect = isAllCorrect && isCorrect;
                     }
                     ConfirmButton.interactable = isAllCorrect;
+
+                    if(isAllCorrect == false)
+                    {
+                        StartCoroutine(PlayWrongSound());
+                    }
                     break;
             }
+        }
+
+        private IEnumerator PlayWrongSound()
+        {
+            BeepSound.Play();
+            yield return new WaitForSeconds(.5f);
+            BeepSound.Play();
         }
 
         public void OnAnswerNotCompleted(GameObject sender, ExperimentActionEvent.EventArgs args)

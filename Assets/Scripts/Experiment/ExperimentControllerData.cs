@@ -65,6 +65,13 @@ namespace KioskTest.Experiment
             new ExperimentState("_14_실험 Add-2",
                 "귀하의 휴대폰 번호 11자리를 다시 입력해주세요", ExperimentContentType.Number,
                 "전화번호", new string[0], 1, 11),
+            
+            new ExperimentState("_15_실험 Add-3",
+                "다음의 인증번호를 입력해 주세요", ExperimentContentType.NumberWithRandom,
+                "인증번호", new string[0], 1, 6),
+            new ExperimentState("_16_실험 Add-4",
+                "다음의 인증번호를 다시 입력해 주세요", ExperimentContentType.NumberWithRandom,
+                "인증번호", new string[0], 1, 6),
 
             new ExperimentState("_15_실험종료",
                 "수고하셨습니다", ExperimentContentType.None,
