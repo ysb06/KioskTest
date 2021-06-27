@@ -42,7 +42,11 @@ namespace KioskTest.Experiment
         /// <summary>
         /// 사용자가 실제로 Confirm 버튼을 누른 시점
         /// </summary>      
-        End
+        End,
+        /// <summary>
+        /// 기타 미분류 이벤트
+        /// </summary> 
+        Undefined
     }
 
     public class ExperimentEventLogger : MonoBehaviour
@@ -91,11 +95,22 @@ namespace KioskTest.Experiment
 
         public void LogTest(UnitTestEvent eventType, long value)
         {
+            LogTest(eventType, value, string.Empty);
+        }
+
+        public void LogTest(UnitTestEvent eventType, string value)
+        {
+            LogTest(eventType, 0, value);
+        }
+
+        public void LogTest(UnitTestEvent eventType, long intValue, string stringValue)
+        {
             TestEvent e = new TestEvent()
             {
                 Event = eventType,
                 Time = Time.realtimeSinceStartup,
-                Value = value
+                Value = intValue,
+                TextValue = stringValue
             };
 
             switch (eventType)
@@ -169,7 +184,7 @@ namespace KioskTest.Experiment
 
         public void ExportToCSV(string testName, bool isShowExplorer)
         {
-            string data = "ID,성별,생일,전화번호,단위테스트_단계,단위테스트_종류,단위테스트_시간,Event,GameTime,값,마우스x,마우스y\n";
+            string data = "ID,성별,생일,전화번호,단위테스트_단계,단위테스트_종류,단위테스트_시간,Event,GameTime,값,마우스x,마우스y,노트\n";
 
             foreach (TestUnit unit in TestList)
             {
@@ -177,7 +192,7 @@ namespace KioskTest.Experiment
                     + unit.TestStep + "," + unit.TestType + "," + unit.TestTime.ToString() + ",";
                 foreach (TestEvent ev in unit.EventList)
                 {
-                    data += common + ev.Event + "," + ev.Time + "," + ev.Value + "," + ev.Position.x + "," + ev.Position.y + "\n";
+                    data += common + ev.Event + "," + ev.Time + "," + ev.Value + "," + ev.Position.x + "," + ev.Position.y + "," + ev.TextValue + "\n";
                 }
             }
 
@@ -221,5 +236,6 @@ namespace KioskTest.Experiment
         public float Time;
         public long Value;
         public Vector2 Position;
+        public string TextValue;
     }
 }

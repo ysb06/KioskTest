@@ -26,6 +26,7 @@ namespace KioskTest.Experiment
 
         [Space(20)]
         public AnswerGuideText AnswerGuideText;
+        public TemporaryAnswerText TempAnswerText;
 
         [Space(20)]
         public NumberAnswerIndicator NumberAnswerIndicator;
@@ -248,6 +249,14 @@ namespace KioskTest.Experiment
                     NumberInputPanel.gameObject.SetActive(true);
 
                     NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
+                    if (correctAnswers != null && currentStateData.ContentType == ExperimentContentType.NumberWithRandom) // 또 다른 땜빵용 코드...이제는 되돌릴 수 없다는 것을 깨달았다.
+                    {
+                        if (correctAnswers[0] >= 100000)
+                        {
+                            // 망할...이 땜빵은 진짜 이젠 귀찮아서 될대로 되라는 식
+                            TempAnswerText.ShowText(correctAnswers[0].ToString());
+                        }
+                    }
                     EventLogger.LogTestStart(currentState, currentStateData.ContentType);
 
                     BeepSound.Play();
@@ -365,6 +374,7 @@ namespace KioskTest.Experiment
             }
             else
             {
+                TempAnswerText.HideText();
                 EventLogger.LogTestEnd(currentState);
                 EventLogger.ShowCurrent();
                 EventLogger.BackupCSV();

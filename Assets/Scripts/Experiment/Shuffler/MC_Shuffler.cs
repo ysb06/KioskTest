@@ -7,6 +7,7 @@ namespace KioskTest.Experiment.Shuffler
 {
     public class MC_Shuffler : MonoBehaviour
     {
+        public ExperimentEventLogger EventLogger;
         public List<Button> Buttons = new List<Button>();
         public List<HorizontalLayoutGroup> ButtonHolders = new List<HorizontalLayoutGroup>();
         public int Width = 2;
@@ -32,6 +33,16 @@ namespace KioskTest.Experiment.Shuffler
         {
             int[] shuffleOrder = GetShuffleOrder();
             SetShuffledButtonList(shuffleOrder);
+
+            if(EventLogger != null)
+            {
+                string logText = string.Empty;
+                foreach(int value in shuffleOrder)
+                {
+                    logText += value.ToString("X");
+                }
+                EventLogger.LogTest(UnitTestEvent.Undefined, logText);
+            }
 
             for (int i = 0; i < Height; i++)
             {
