@@ -1112,13 +1112,14 @@ GameObject:
   - component: {fileID: 274514803}
   - component: {fileID: 274514805}
   - component: {fileID: 274514804}
+  - component: {fileID: 274514806}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Fucking Temporary Answer Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &274514803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1131,7 +1132,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 515889722}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1180,6 +1181,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274514802}
   m_CullTransparentMesh: 1
+--- !u!114 &274514806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274514802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2960661758e92e64882e39e348f6f973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Content: {fileID: 274514804}
 --- !u!1 &293288236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,8 +2686,8 @@ RectTransform:
   - {fileID: 1340175139}
   - {fileID: 674925748}
   - {fileID: 2104984436}
-  - {fileID: 591207303}
   - {fileID: 274514803}
+  - {fileID: 591207303}
   m_Father: {fileID: 740229533}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3426,7 +3440,7 @@ RectTransform:
   m_Children:
   - {fileID: 1815563926}
   m_Father: {fileID: 515889722}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
@@ -11264,6 +11278,7 @@ MonoBehaviour:
   BeepSound: {fileID: 1167992524}
   MainGuideTextUI: {fileID: 1971394525}
   AnswerGuideText: {fileID: 587445652}
+  TempAnswerText: {fileID: 274514806}
   NumberAnswerIndicator: {fileID: 1954640751}
   NumberInputPanel: {fileID: 401107375}
   MultipleChoiceInput: {fileID: 1598214883}
