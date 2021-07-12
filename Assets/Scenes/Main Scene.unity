@@ -8609,7 +8609,7 @@ GameObject:
   - component: {fileID: 1381682753}
   - component: {fileID: 1381682752}
   m_Layer: 5
-  m_Name: Replay Button
+  m_Name: Shuffle Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
