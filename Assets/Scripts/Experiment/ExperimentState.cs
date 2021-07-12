@@ -8,7 +8,7 @@ namespace KioskTest.Experiment
 {
     public enum ExperimentContentType
     {
-        None, Number, NumberWithRandom, MultipleSelection, MultipleSelectionWithRandom
+        None, Number, NumberWithRandom, MultipleSelection, MultipleSelectionWithRandom, NumberWithRandomAndNoGuide
     }
 
     [Serializable]

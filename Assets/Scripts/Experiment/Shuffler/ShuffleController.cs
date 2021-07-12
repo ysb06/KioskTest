@@ -80,10 +80,28 @@ namespace KioskTest.Experiment.Shuffler
                     break;
             }
             */
+
+            // 성대용
+            //switch (state)
+            //{
+            //    case 4:
+            //    case 12:
+            //    case 15:
+            //        Shufflers[0].Shuffle();
+            //        break;
+            //    default:
+            //        foreach (MC_Shuffler shuffler in Shufflers)
+            //        {
+            //            shuffler.SortOrder();
+            //        }
+            //        break;
+            //}
+
+            // 인천대용
             switch (state)
             {
-                case 4:
-                case 12:
+                case 13:
+                case 14:
                 case 16:
                     Shufflers[0].Shuffle();
                     break;

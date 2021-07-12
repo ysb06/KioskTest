@@ -124,6 +124,24 @@ namespace KioskTest.Experiment
                         ConfirmButton.interactable = false;
                         AnswerGuideText.Initialize(answerGuideText, DoTestAfterShowAnswer);
                         break;
+                    //------------------------------------//
+                    case ExperimentContentType.NumberWithRandomAndNoGuide:      //새로 추가한 것
+                        DingSound.Play();
+
+                        AnswerGuideText.gameObject.SetActive(false);
+                        NumberAnswerIndicator.gameObject.SetActive(false);
+                        NumberInputPanel.gameObject.SetActive(false);
+                        MultipleChoiceInput.gameObject.SetActive(false);
+                        TempAnswerText.gameObject.SetActive(false);
+
+                        //정답 랜덤 생성
+                        answerRange = (int)Math.Pow(10, currentStateData.AnswerMaxLength);
+                        correctAnswers = GenerateRandomAnswer(answerRange / 10, answerRange, currentStateData.AnswerCount);
+                        answerGuideText = GenerateAnswerText(correctAnswers);
+
+                        ConfirmButton.interactable = false;
+                        StartCoroutine(WaitUser());
+                        break;
                     case ExperimentContentType.MultipleSelectionWithRandom:
                         DingSound.Play();
 
@@ -249,14 +267,16 @@ namespace KioskTest.Experiment
                     NumberInputPanel.gameObject.SetActive(true);
 
                     NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
-                    if (correctAnswers != null && currentStateData.ContentType == ExperimentContentType.NumberWithRandom) // 또 다른 땜빵용 코드...이제는 되돌릴 수 없다는 것을 깨달았다.
-                    {
-                        if (correctAnswers[0] >= 100000)
-                        {
-                            // 망할...이 땜빵은 진짜 이젠 귀찮아서 될대로 되라는 식
-                            TempAnswerText.ShowText(correctAnswers[0].ToString());
-                        }
-                    }
+                    EventLogger.LogTestStart(currentState, currentStateData.ContentType);
+
+                    BeepSound.Play();
+                    break;
+                case ExperimentContentType.NumberWithRandomAndNoGuide:
+                    NumberAnswerIndicator.gameObject.SetActive(true);
+                    NumberInputPanel.gameObject.SetActive(true);
+                    TempAnswerText.ShowText(correctAnswers[0].ToString());
+
+                    NumberAnswerIndicator.Initialize(currentStateData.AnswerTitle, currentStateData.AnswerCount, currentStateData.AnswerMaxLength);
                     EventLogger.LogTestStart(currentState, currentStateData.ContentType);
 
                     BeepSound.Play();
@@ -313,6 +333,7 @@ namespace KioskTest.Experiment
                     }
                     break;
                 case ExperimentContentType.NumberWithRandom:
+                case ExperimentContentType.NumberWithRandomAndNoGuide:
                 case ExperimentContentType.MultipleSelectionWithRandom:
                     if (args.Answers.Length < currentStateData.AnswerCount)
                     {
@@ -380,6 +401,7 @@ namespace KioskTest.Experiment
                 EventLogger.BackupCSV();
                 DoTest();
             }
+            TempAnswerText.gameObject.SetActive(false);
         }
 
         public void ForceTest(int state)
