@@ -17,13 +17,13 @@ namespace KioskTest.UI.Experiment
         public int CurrentPage = 0;
         public List<RectTransform> Pages = new List<RectTransform>();
         public PageIndicator indicatorSwitcher;
-        private bool IsMoving = false;
+        protected bool IsMoving = false;
         private bool NeedToTrasitRight = true;
 
         [Header("답안과 답안 버튼")]
         public int MaxAnswer = 1;
         public Button[] AnswerButtons;
-        private List<long> Answers = new List<long>();
+        protected List<long> Answers = new List<long>();
 
         [Header("사용자 최종 답안 구성 이벤트")]
         public ExperimentActionEvent SelectEvent;
@@ -37,7 +37,7 @@ namespace KioskTest.UI.Experiment
             }
         }
 
-        public void Initialize(string[] answerSet, int answerCount)
+        public virtual void Initialize(string[] answerSet, int answerCount)
         {
             MaxAnswer = answerCount;
             for(int i = 0; i < AnswerButtons.Length; i++)
@@ -61,10 +61,10 @@ namespace KioskTest.UI.Experiment
             {
                 target.colors = new ColorBlock()
                 {
-                    normalColor = Color.white,
-                    highlightedColor = Color.white,
+                    normalColor = Color.black,
+                    highlightedColor = Color.black,
                     pressedColor = Color.gray,
-                    selectedColor = Color.white,
+                    selectedColor = Color.black,
                     disabledColor = Color.gray,
                     colorMultiplier = 1,
                     fadeDuration = 0.1f
@@ -116,10 +116,10 @@ namespace KioskTest.UI.Experiment
                     Answers.Remove(listId);
                     AnswerButtons[listId].colors = new ColorBlock()
                     {
-                        normalColor = Color.white,
-                        highlightedColor = Color.white,
+                        normalColor = Color.black,
+                        highlightedColor = Color.black,
                         pressedColor = Color.gray,
-                        selectedColor = Color.white,
+                        selectedColor = Color.black,
                         disabledColor = Color.gray,
                         colorMultiplier = 1,
                         fadeDuration = 0.1f
@@ -205,7 +205,7 @@ namespace KioskTest.UI.Experiment
         /// <summary>
         /// 현재 스크린에 맞추어 모양 재구성
         /// </summary> 만약 플레이 도중 모양 이상하게 나오는 경우 본 메서드를 호출할 것
-        private void InitializePagePosition()
+        protected void InitializePagePosition()
         {
             for (int i = 0; i < Pages.Count; i++)
             {
